@@ -1,0 +1,30 @@
+{{#if showCustomVersion}}
+  {{!-- Custom/Mobile Version --}}
+  <li class="navigation-toggle">
+    <a href {{action "toggleDrop"}} class="toggle-link">
+      {{selectedNavItem.displayName}}
+      {{d-icon (if expanded "caret-down" "caret-right")}}
+    </a>
+  </li>
+  {{#if expanded}}
+    <ul class="drop">
+      {{#each navItems as |navItem|}}
+        {{navigation-item content=navItem filterMode=filterMode category=category}}
+      {{/each}}
+      {{#each connectors as |c|}}
+        {{plugin-connector connector=c class=c.classNames tagName="li" args=(hash category=category filterMode=filterMode)}}
+      {{/each}}
+    </ul>
+  {{/if}}
+{{else}}
+
+  {{!-- Default/Desktop Version --}}
+  {{#each navItems as |navItem|}}
+    {{navigation-item content=navItem filterMode=filterMode category=category}}
+  {{/each}}
+  {{custom-html name="extraNavItem" tagName="li"}}
+  {{!- this is done to avoid DIV in the UL, originally {{plugin-outlet name="extra-nav-item"}}
+  {{#each connectors as |c|}}
+    {{plugin-connector connector=c class=c.classNames tagName="li" args=(hash category=category filterMode=filterMode)}}
+  {{/each}}
+{{/if}}
