@@ -11,7 +11,8 @@ export default apiInitializer("0.8", api => {
 
     @discourseComputed("site.isMobileDevice", "router.currentRouteName")
     isCustomNav(isMobile, routeName) {
-      let isTagPage = routeName.split(".")[0] === "tag";
+      let isTagPage = routeName.split(".")[0] === "tag" || 
+        routeName.split(".")[0] === "tags";
       let isHomePage = routeName=== "discovery.latest" || 
         routeName === "discovery.top" ||
         routeName === "discovery.categories";
