@@ -1,0 +1,12 @@
+on_home_page:
+  type: bool
+  default: false
+  description: "Show minimal nav on homepage"
+on_tag_pages:
+  type: bool
+  default: false
+  description: "Show minimal nav on tag pages"
+on_category_pages:
+  type: bool
+  default: false
+  description: "Show minimal nav on category pages"

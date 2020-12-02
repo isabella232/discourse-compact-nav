@@ -1,8 +1,8 @@
-.nav-pills.custom-version {
+.nav-pills.compact-version {
   position: relative;
 }
 
-.list-controls .nav-pills.custom-version > li {
+.list-controls .nav-pills.compact-version > li {
   margin-right: 0;
   font-size: .8706em;
   border: 1px solid var(--primary-medium);
@@ -19,7 +19,7 @@
   }
 }
 
-.list-controls .nav-pills.custom-version .drop {
+.list-controls .nav-pills.compact-version .drop {
   border: 1px solid var(--primary-low);
   position: absolute;
   z-index: 299;
